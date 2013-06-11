@@ -27,9 +27,10 @@ function save_options() {
 
 function restore_options() {
   document.getElementById("max_spawn").value = 20;
+  var move_enabled = document.getElementById("move_enabled");
+  move_enabled.checked = false;
   chrome.storage.local.get('bunbun', function(result){
     var s_move_enabled = result.bunbun.move_enabled;
-    var move_enabled = document.getElementById("move_enabled");
     move_enabled.checked = s_move_enabled == 1 ? true : false;
 
     var s_max_spawn = result.bunbun.max_spawn;
