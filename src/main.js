@@ -54,11 +54,11 @@ function createImage() {
         image.style.top = top + "px";
 
         image.updateVector();
-    },
+    };
     image.animationLoop = function(){
         image.move();
         requestAnimationFrame(image.animationLoop);
-    },
+    };
     image.updateVector = function() {
         var x = Number( image.style.left.replace("px","") ) + image.width / 2;
         var y = Number( image.style.top.replace("px","") ) + image.height / 2;
@@ -68,7 +68,7 @@ function createImage() {
         else if( y < 0 || y > document.documentElement.clientHeight ) {
             image.vy = -image.vy;
         }
-    }
+    };
     return image;
 }
 
